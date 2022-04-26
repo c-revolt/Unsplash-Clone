@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		D020D5C52818495600527AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020D5C42818495600527AF3 /* AppDelegate.swift */; };
 		D020D5C72818495600527AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020D5C62818495600527AF3 /* SceneDelegate.swift */; };
-		D020D5C92818495600527AF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020D5C82818495600527AF3 /* ViewController.swift */; };
+		D020D5C92818495600527AF3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020D5C82818495600527AF3 /* PickerViewController.swift */; };
 		D020D5CE2818495B00527AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D020D5CD2818495B00527AF3 /* Assets.xcassets */; };
 		D020D5D12818495B00527AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D020D5CF2818495B00527AF3 /* LaunchScreen.storyboard */; };
+		D020D5D928184BA000527AF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020D5D828184BA000527AF3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D020D5C12818495600527AF3 /* Unsplash Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unsplash Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D020D5C42818495600527AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D020D5C62818495600527AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D020D5C82818495600527AF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D020D5C82818495600527AF3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		D020D5CD2818495B00527AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D020D5D02818495B00527AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D020D5D22818495B00527AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D020D5D828184BA000527AF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,8 @@
 			children = (
 				D020D5C42818495600527AF3 /* AppDelegate.swift */,
 				D020D5C62818495600527AF3 /* SceneDelegate.swift */,
-				D020D5C82818495600527AF3 /* ViewController.swift */,
+				D020D5C82818495600527AF3 /* PickerViewController.swift */,
+				D020D5D828184BA000527AF3 /* Constants.swift */,
 				D020D5CD2818495B00527AF3 /* Assets.xcassets */,
 				D020D5CF2818495B00527AF3 /* LaunchScreen.storyboard */,
 				D020D5D22818495B00527AF3 /* Info.plist */,
@@ -134,9 +137,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D020D5C92818495600527AF3 /* ViewController.swift in Sources */,
+				D020D5C92818495600527AF3 /* PickerViewController.swift in Sources */,
 				D020D5C52818495600527AF3 /* AppDelegate.swift in Sources */,
 				D020D5C72818495600527AF3 /* SceneDelegate.swift in Sources */,
+				D020D5D928184BA000527AF3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

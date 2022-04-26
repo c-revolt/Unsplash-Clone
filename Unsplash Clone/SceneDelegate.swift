@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         
-        let controller = ViewController()
+        let controller = PickerViewController()
         let navController = UINavigationController(rootViewController: controller)
         window?.rootViewController = navController
         
