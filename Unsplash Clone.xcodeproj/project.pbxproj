@@ -13,6 +13,7 @@
 		D020D5CE2818495B00527AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D020D5CD2818495B00527AF3 /* Assets.xcassets */; };
 		D020D5D12818495B00527AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D020D5CF2818495B00527AF3 /* LaunchScreen.storyboard */; };
 		D020D5D928184BA000527AF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020D5D828184BA000527AF3 /* Constants.swift */; };
+		D077D09A2820F3FF002F13DD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077D0992820F3FF002F13DD /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D020D5D02818495B00527AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D020D5D22818495B00527AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D020D5D828184BA000527AF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D077D0992820F3FF002F13DD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,21 @@
 				D020D5C42818495600527AF3 /* AppDelegate.swift */,
 				D020D5C62818495600527AF3 /* SceneDelegate.swift */,
 				D020D5C82818495600527AF3 /* PickerViewController.swift */,
+				D077D09B2820F40B002F13DD /* Services */,
 				D020D5D828184BA000527AF3 /* Constants.swift */,
 				D020D5CD2818495B00527AF3 /* Assets.xcassets */,
 				D020D5CF2818495B00527AF3 /* LaunchScreen.storyboard */,
 				D020D5D22818495B00527AF3 /* Info.plist */,
 			);
 			path = "Unsplash Clone";
+			sourceTree = "<group>";
+		};
+		D077D09B2820F40B002F13DD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D077D0992820F3FF002F13DD /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D077D09A2820F3FF002F13DD /* NetworkService.swift in Sources */,
 				D020D5C92818495600527AF3 /* PickerViewController.swift in Sources */,
 				D020D5C52818495600527AF3 /* AppDelegate.swift in Sources */,
 				D020D5C72818495600527AF3 /* SceneDelegate.swift in Sources */,

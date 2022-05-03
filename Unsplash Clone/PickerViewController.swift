@@ -10,19 +10,21 @@ import UIKit
 class PickerViewController: UIViewController {
     
     var collectionView: UICollectionView! = nil
+    var networkService = NetworkService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
         setupNavController()
+        setupSearchBar()
         
     }
     
     // MARK: - Setup UI Elements
     
     private func setupNavController() {
-        navigationItem.title = "Unsplash"
+        navigationItem.title = "UnClone"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = .clear
         navigationController?.navigationBar.isTranslucent = true
@@ -44,6 +46,17 @@ class PickerViewController: UIViewController {
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: K.picker_ID_Cell)
         
+        
+    }
+    
+    private func setupSearchBar() {
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.searchBar.delegate = self
+        
+        searchController.searchBar.tintColor = .red
+        searchController.searchBar.isTranslucent = true
         
     }
     
@@ -78,9 +91,17 @@ extension PickerViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return cell
     }
+}
+
+// MARK: UISearchBarDelegatte
+extension PickerViewController: UISearchBarDelegate {
     
-    
-    
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        
+        networkService.request(searchTerm: searchText) { (_, _) in
+            print("123")
+        }
+    }
 }
 
