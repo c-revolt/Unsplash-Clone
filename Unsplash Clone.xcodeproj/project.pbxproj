@@ -14,6 +14,8 @@
 		D020D5D12818495B00527AF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D020D5CF2818495B00527AF3 /* LaunchScreen.storyboard */; };
 		D020D5D928184BA000527AF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020D5D828184BA000527AF3 /* Constants.swift */; };
 		D077D09A2820F3FF002F13DD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077D0992820F3FF002F13DD /* NetworkService.swift */; };
+		D077D09D28211D1C002F13DD /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077D09C28211D1C002F13DD /* NetworkDataFetcher.swift */; };
+		D077D09F28211D88002F13DD /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077D09E28211D88002F13DD /* SearchResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D020D5D22818495B00527AF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D020D5D828184BA000527AF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D077D0992820F3FF002F13DD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D077D09C28211D1C002F13DD /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		D077D09E28211D88002F13DD /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			children = (
 				D020D5C42818495600527AF3 /* AppDelegate.swift */,
 				D020D5C62818495600527AF3 /* SceneDelegate.swift */,
+				D077D0A028211D94002F13DD /* Model */,
 				D020D5C82818495600527AF3 /* PickerViewController.swift */,
 				D077D09B2820F40B002F13DD /* Services */,
 				D020D5D828184BA000527AF3 /* Constants.swift */,
@@ -74,8 +79,17 @@
 			isa = PBXGroup;
 			children = (
 				D077D0992820F3FF002F13DD /* NetworkService.swift */,
+				D077D09C28211D1C002F13DD /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D077D0A028211D94002F13DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D077D09E28211D88002F13DD /* SearchResults.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,11 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D077D09D28211D1C002F13DD /* NetworkDataFetcher.swift in Sources */,
 				D077D09A2820F3FF002F13DD /* NetworkService.swift in Sources */,
 				D020D5C92818495600527AF3 /* PickerViewController.swift in Sources */,
 				D020D5C52818495600527AF3 /* AppDelegate.swift in Sources */,
 				D020D5C72818495600527AF3 /* SceneDelegate.swift in Sources */,
 				D020D5D928184BA000527AF3 /* Constants.swift in Sources */,
+				D077D09F28211D88002F13DD /* SearchResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
