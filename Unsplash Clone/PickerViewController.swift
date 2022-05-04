@@ -12,6 +12,7 @@ class PickerViewController: UIViewController {
     var collectionView: UICollectionView! = nil
     var networkDataFetcher = NetworkDataFetcher()
     private var timer = Timer()
+    private var photos = [UnsplashPhoto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +83,7 @@ class PickerViewController: UIViewController {
 extension PickerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,13 +102,11 @@ extension PickerViewController: UISearchBarDelegate {
         print(searchText)
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-            self.networkDataFetcher.fetchImages(searchTerm: searchText) { searchResults in
-                searchResults?.results.map({ photo in
-                    print(photo.urls["small"])
-                })
+            self.networkDataFetcher.fetchImages(searchTerm: searchText) { [weak self] (searchResults) in
+                guard let fetchedPhotos = searchResults else { return }
+                self?.photos = fetchedPhotos.results
             }
         })
-        
        
     }
 }

@@ -16,6 +16,7 @@
 		D077D09A2820F3FF002F13DD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077D0992820F3FF002F13DD /* NetworkService.swift */; };
 		D077D09D28211D1C002F13DD /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077D09C28211D1C002F13DD /* NetworkDataFetcher.swift */; };
 		D077D09F28211D88002F13DD /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D077D09E28211D88002F13DD /* SearchResults.swift */; };
+		D0E0022728225AA1002B219F /* PickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0022628225AA1002B219F /* PickerViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D077D0992820F3FF002F13DD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D077D09C28211D1C002F13DD /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		D077D09E28211D88002F13DD /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		D0E0022628225AA1002B219F /* PickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				D020D5C62818495600527AF3 /* SceneDelegate.swift */,
 				D077D0A028211D94002F13DD /* Model */,
 				D020D5C82818495600527AF3 /* PickerViewController.swift */,
+				D0E0022628225AA1002B219F /* PickerViewCell.swift */,
 				D077D09B2820F40B002F13DD /* Services */,
 				D020D5D828184BA000527AF3 /* Constants.swift */,
 				D020D5CD2818495B00527AF3 /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E0022728225AA1002B219F /* PickerViewCell.swift in Sources */,
 				D077D09D28211D1C002F13DD /* NetworkDataFetcher.swift in Sources */,
 				D077D09A2820F3FF002F13DD /* NetworkService.swift in Sources */,
 				D020D5C92818495600527AF3 /* PickerViewController.swift in Sources */,
