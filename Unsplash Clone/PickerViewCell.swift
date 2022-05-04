@@ -6,23 +6,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PickerViewCell: UICollectionViewCell {
     
     static let pickerIDCell = K.picker_ID_Cell
     private let photoImageView = UIImageView()
     private var checkMark = UIImageView()
+    
     var unsplashPhoto: UnsplashPhoto! {
         didSet {
             let photoUrl = unsplashPhoto.urls["regular"]
+            guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else {return}
+            photoImageView.sd_setImage(with: url, completed: nil)
         }
     }
     
-    override var isSelected: Bool {
-        didSet {
-            
-        }
-    }
     
     override func prepareForReuse() {
         super.prepareForReuse()

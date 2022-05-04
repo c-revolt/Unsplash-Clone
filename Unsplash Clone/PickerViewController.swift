@@ -13,6 +13,8 @@ class PickerViewController: UIViewController {
     var networkDataFetcher = NetworkDataFetcher()
     private var timer = Timer()
     private var photos = [UnsplashPhoto]()
+    private let itemsPerRow: CGFloat = 2
+    private let sectionsInserts = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +46,12 @@ class PickerViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.backgroundColor = .gray
+        collectionView.backgroundColor = .black
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: K.picker_ID_Cell)
+        collectionView.register(PickerViewCell.self, forCellWithReuseIdentifier: K.picker_ID_Cell)
+        
+        collectionView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        collectionView.contentInsetAdjustmentBehavior = .automatic
         
         
     }
@@ -57,7 +62,7 @@ class PickerViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.searchBar.delegate = self
         
-        searchController.searchBar.tintColor = .red
+        searchController.searchBar.tintColor = .white
         searchController.searchBar.isTranslucent = true
         
     }
@@ -87,9 +92,10 @@ extension PickerViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.picker_ID_Cell, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.picker_ID_Cell, for: indexPath) as! PickerViewCell
         
-        cell.backgroundColor = .yellow
+        let unsplashPhoto = photos[indexPath.item]
+        cell.unsplashPhoto = unsplashPhoto
         
         return cell
     }
@@ -105,9 +111,39 @@ extension PickerViewController: UISearchBarDelegate {
             self.networkDataFetcher.fetchImages(searchTerm: searchText) { [weak self] (searchResults) in
                 guard let fetchedPhotos = searchResults else { return }
                 self?.photos = fetchedPhotos.results
+                self?.collectionView.reloadData()
             }
         })
        
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension PickerViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // достаём фотографию из всех фотографий
+        let photo = photos[indexPath.item]
+        // смотрим сколько отступов между объектами
+        // две ячайки и три расстояния
+        let paddingSpace = sectionsInserts.left * (itemsPerRow + 1)
+        // сколько всего ширины имеется в доступе
+        // из ширины экрана вычитаем резльтат paddingSplace
+        let availableWidth = view.frame.width - paddingSpace
+        // какую ширину мы предоставляем одной строчке
+        // вся доступная ширина делится на количество ячеек, которые мы хотим видеть
+        let widthPerItem = availableWidth / itemsPerRow
+        // высчитываем высоту картинки, исходят из соотношения её сторон
+        let height = CGFloat(photo.height) * widthPerItem / CGFloat(photo.width)
+        return CGSize(width: widthPerItem, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionsInserts
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionsInserts.left
     }
 }
 
